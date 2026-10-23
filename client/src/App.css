@@ -1,0 +1,300 @@
+
+/* ===== Global styles ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ===== Header ===== */
+
+.app-header {
+  background: #13681e;
+  color: #ffffff;
+  padding: 20px 25px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.app-header h2 {
+  font-size: 22px;
+}
+
+.app-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.app-header a {
+  text-decoration: none;
+  color: #dbeafe;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.app-header a.active {
+  background: #ffffff;
+  color: #133568;
+  font-weight: bold;
+}
+
+/* ===== Page layout ===== */
+
+.container {
+  max-width: 1200px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  color: #17356b;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  margin-bottom: 28px;
+  color: #64748b;
+}
+
+/* ===== Filters ===== */
+
+.filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filters input,
+.filters select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+/* ===== Product cards ===== */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.category-tag {
+  align-self: flex-start;
+  padding: 5px 12px;
+  background: #e8f0ff;
+  color: #1d4ed8;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.product-card h3 {
+  font-size: 19px;
+  color: #1e293b;
+}
+
+.product-card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.product-price {
+  margin-top: auto;
+  color: #087545;
+  font-size: 20px;
+}
+
+/* ===== Pagination ===== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+.pagination button {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #e8f0ff;
+}
+
+.pagination button.active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== Feedback messages ===== */
+
+.results-summary,
+.status,
+.end-message {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.status {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.end-message {
+  padding: 18px;
+  background: #e7f7ee;
+  border-radius: 8px;
+  color: #087545;
+  font-weight: bold;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.error button {
+  margin-top: 10px;
+  padding: 8px 16px;
+}
+
+.empty-state {
+  padding: 35px;
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+  color: #64748b;
+}
+
+.scroll-sentinel {
+  height: 15px;
+  width: 100%;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters input {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-header h2 {
+    font-size: 19px;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 0 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .product-grid,
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .filters input {
+    grid-column: auto;
+  }
+
+  .pagination {
+    gap: 5px;
+  }
+
+  .pagination button {
+    padding: 8px 11px;
+  }
+
+  .product-card {
+    min-height: 170px;
+  }
+}
